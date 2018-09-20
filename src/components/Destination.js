@@ -41,19 +41,22 @@ class Destination extends Component {
   render() {
     const result = this.state.appdata.find( dest => dest.countryName === this.state.countryName );
     return (
-      <DropdownMenu triggerType='text' trigger={`Select Destination in ${this.state.countryName}`}>
+      <div>
         {this.state.error ? <p>{this.state.error.message}</p> : null}
         {!this.state.isLoading ? (
-          result.destinations.map(destination => {
-            const destinationUrl = destination.replace(/ /g, '_');
-          return (
-            <MenuItem text={destination} location={`/ctry/${this.state.suburl}/dest/${destinationUrl}`} />          
-          );
-        })      
-      ) : (
-        <p>Loading...</p>
-      )}       
-    </DropdownMenu>
+          <DropdownMenu triggerType='text' trigger={`Select Destination in ${this.state.countryName}`}>
+            {result.destinations.map(destination => {
+              const destinationUrl = destination.replace(/ /g, '_');
+                return (
+                  <MenuItem text={destination} location={`/ctry/${this.state.suburl}/dest/${destinationUrl}`} />          
+                );
+              })
+            }
+          </DropdownMenu> 
+        ) : (
+          <p>Loading...</p>
+        )}       
+     </div>
     );
   }
 

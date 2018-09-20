@@ -41,30 +41,26 @@ class Country extends Component {
 
   render() {
     return (
-      <DropdownMenu triggerType='text' trigger='Select Country'>
-        {this.state.error ? <p>{this.state.error.message}</p> : null}
-        {!this.state.isLoading ? (
-          this.state.appdata.map(dataline => {
-            const { countryName } = dataline;
-            const countryUrl = countryName.replace(/ /g, '_');
-            return (
-              <MenuItem text={countryName} location={`/ctry/${countryUrl}`} />          
-            );
-          })
-          
-        ) : (
-          <p>Loading...</p>
-        )}       
-      </DropdownMenu>
+      <div>
+        {this.state.error ? <p>{this.state.error.message}</p> : null}         
+          {!this.state.isLoading ? (
+            <DropdownMenu triggerType='text' trigger='Select Country'>
+              {this.state.appdata.map(dataline => {
+                const { countryName } = dataline;
+                const countryUrl = countryName.replace(/ /g, '_');
+                return (
+                  <MenuItem text={countryName} location={`/ctry/${countryUrl}`} />          
+                );
+              })  
+              }
+            </DropdownMenu>
+          ) : (
+            <p>Loading...</p>
+          )}      
+      </div>
     )
   }
 
 }
 
 export default Country;
-
-
-/*
-<option value={countryName}>{countryName}</option>
-
-*/

@@ -5,8 +5,8 @@ footer {padding:15px 0; background-color:#ecebe6; text-align:center;}
 .name {font-size:32px; text-decoration:none; font-weight:bold; font-style: italic;}
 .name, .name a {color:#FFF;}
 .excursion {border:1px solid #d0e2ec; margin-bottom:16px;}
-h1 {font-size:34px; color:#007CC3; line-height:1.4;}
-h2 {font-size:24px; color:#007CC3; line-height:1.5; margin-bottom:10px;}
+h1 {font-size:34px; color:#007CC3; line-height:1.1; margin-bottom:10px;}
+h2 {font-size:24px; color:#007CC3; line-height:1.2; margin-bottom:10px;}
 h3 {display:block; background-color:#007cc3; color:#FFF; padding:15px 10px 20px; font-size:22px;}
 .excursion h4 {display:block; background-color:#e5f2f9; padding:15px 10px 20px; font-size:22px;}
 .excursion p {padding:20px;}

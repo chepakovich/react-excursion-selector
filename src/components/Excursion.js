@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ExcursionsApi from '../api/ExcursionsApi';
+import Categories from './Categories';
 
 class Excursion extends Component {
 
@@ -48,40 +49,14 @@ class Excursion extends Component {
 
   render() {
     const categories = this.state.appdata;
-    let output=[], key1, key2, key3;
-    for (key1 in categories) {
-      output.push(<h2>{categories[key1].categoryName}</h2>);
-      for (key2 in categories[key1].subCategories) {
-        output.push(<h3><b>{categories[key1].subCategories[key2].subCategoryName}</b></h3>);
-        for (key3 in categories[key1].subCategories[key2].excursions) {
-          if (categories[key1].subCategories[key2].excursions[key3].excursionImages != null) {
-            output.push(
-            <div className="excursion">
-              <h4>{categories[key1].subCategories[key2].excursions[key3].excursionName}</h4>
-              <img src={'https://'+categories[key1].subCategories[key2].excursions[key3].excursionImages.Img16X9} alt="" />
-              <p>{categories[key1].subCategories[key2].excursions[key3].excursionShortDescription}</p>
-              <div className="clear"></div>
-            </div>
-            );
-          }
-        }
-
-      }
-    }
-
-    //console.log(output);
-    const result = this.state.appdata.find( exc => exc.countryName === this.state.countryName );
-      if (result) {
-        console.log(result.destinations);
-      }
+    const result = categories.find( exc => exc.countryName === this.state.countryName );
     return (
       <div>       
         <h1>Excursions in {this.state.destinationName} ({this.state.countryName})</h1>
-        {output}
+        <Categories appdata={categories} />
       </div>
     );
   }
-
 }
 
 export default Excursion;
