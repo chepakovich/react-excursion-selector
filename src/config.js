@@ -1,0 +1,2 @@
+export const apiUrlDestinations = 'https://hotelinfoservice.sunwingtravelgroup.com/en/AllHotelDestinationList';
+export const apiUrlExcursions = 'https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/';
